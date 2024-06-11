@@ -1,0 +1,12 @@
+<h1>Sale</h1>
+
+<p>Total: <%= @sale.total %></p>
+
+<h2>Items</h2>
+<ul>
+  <% @sale.sale_items.each do |sale_item| %>
+    <li><%= sale_item.item.name %> - Quantity: <%= sale_item.quantity %> - Price: <%= sale_item.price %></li>
+  <% end %>
+</ul>
+
+<%= link_to 'Back', sales_path %>

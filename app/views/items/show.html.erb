@@ -1,0 +1,7 @@
+<h1><%= @item.name %></h1>
+
+<p>Quantity: <%= @item.quantity %></p>
+<p>Price: <%= @item.price %></p>
+
+<%= link_to 'Edit', edit_item_path(@item) %>
+<%= link_to 'Back', items_path %>

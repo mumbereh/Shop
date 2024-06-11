@@ -1,0 +1,41 @@
+<h1>General Report</h1>
+
+<h2>Sales</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Total</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @sales.each do |sale| %>
+      <tr>
+        <td><%= sale.total %></td>
+        <td><%= sale.created_at.to_date %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h2>Stock Levels</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Quantity</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @items.each do |item| %>
+      <tr>
+        <td><%= item.name %></td>
+        <td><%= item.quantity %></td>
+        <td><%= item.price %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Back to Reports', root_path %>

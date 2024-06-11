@@ -1,0 +1,21 @@
+<h1>Edit Sale</h1>
+
+<%= form_with model: @sale, local: true do |form| %>
+  <h3>Edit Items</h3>
+  <%= form.fields_for :sale_items do |sale_item_form| %>
+    <div>
+      <%= sale_item_form.label :item_id, "Item" %>
+      <%= sale_item_form.collection_select :item_id, @items, :id, :name %>
+    </div>
+    <div>
+      <%= sale_item_form.label :quantity %>
+      <%= sale_item_form.number_field :quantity %>
+    </div>
+    <div>
+      <%= sale_item_form.label :price %>
+      <%= sale_item_form.number_field :price, step: 0.01 %>
+    </div>
+  <% end %>
+  <%= form.submit %>
+
+<%= link_to 'Back', sales_path %>
